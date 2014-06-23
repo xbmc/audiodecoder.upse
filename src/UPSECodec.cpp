@@ -219,6 +219,8 @@ bool DeInit(void* context)
   upse_eventloop_render(upse->mod, (int16_t**)&upse->buf);
   upse_module_close(upse->mod);
   delete upse;
+
+  return true;
 }
 
 bool ReadTag(const char* strFile, char* title, char* artist, int* length)
