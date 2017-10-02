@@ -8,14 +8,18 @@ enable_language(CXX)
 
 find_package(Kodi REQUIRED)
 
-include_directories(${KODI_INCLUDE_DIR}
+include_directories(${KODI_INCLUDE_DIR}/..
                     ${PROJECT_SOURCE_DIR}/lib/libupse)
 
 add_subdirectory(lib/libupse)
 
 set(UPSE_SOURCES src/UPSECodec.cpp)
 
+if(WIN32)
+set(DEPLIBS upse)
+else()
 set(DEPLIBS -Wl,--whole-archive upse -Wl,--no-whole-archive)
+endif()
 
 build_addon(audiodecoder.upse UPSE DEPLIBS)
 
