@@ -32,8 +32,10 @@ set(SOURCES upse_bios_manager.c
             Neill/spu.c
             Neill/spucore.c)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
-
 add_definitions(-DEMU_COMPILE -DEMU_LITTLE_ENDIAN)
+if(WIN32)
+  add_definitions(-D_CRT_NONSTDC_NO_DEPRECATE -Dstrcasecmp=_stricmp)
+endif()
 
+set(CMAKE_POSITION_INDEPENDENT_CODE 1)
 add_library(upse STATIC ${SOURCES})

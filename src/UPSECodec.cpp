@@ -19,6 +19,7 @@
 
 #include <kodi/addon-instance/AudioDecoder.h>
 #include <kodi/Filesystem.h>
+#include <algorithm>
 #include <iostream>
 
 extern "C" {
