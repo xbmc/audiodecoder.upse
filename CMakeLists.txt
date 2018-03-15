@@ -15,10 +15,10 @@ add_subdirectory(lib/libupse)
 
 set(UPSE_SOURCES src/UPSECodec.cpp)
 
-if(WIN32)
-set(DEPLIBS upse)
+if(UNIX AND NOT APPLE)
+  set(DEPLIBS -Wl,--whole-archive upse -Wl,--no-whole-archive)
 else()
-set(DEPLIBS -Wl,--whole-archive upse -Wl,--no-whole-archive)
+  set(DEPLIBS upse)
 endif()
 
 build_addon(audiodecoder.upse UPSE DEPLIBS)
