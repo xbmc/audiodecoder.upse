@@ -83,8 +83,7 @@ struct UPSEContext
 
 }
 
-class CUPSECodec : public kodi::addon::CInstanceAudioDecoder,
-                   public kodi::addon::CAddonBase
+class ATTRIBUTE_HIDDEN CUPSECodec : public kodi::addon::CInstanceAudioDecoder
 {
 public:
   CUPSECodec(KODI_HANDLE instance) :
