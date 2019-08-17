@@ -1,8 +1,5 @@
+cmake_minimum_required(VERSION 3.5)
 project(libupse)
-
-enable_language(C)
-
-cmake_minimum_required(VERSION 2.6)
 
 set(SOURCES upse_bios_manager.c
             upse_container_xsf.c
