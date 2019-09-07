@@ -94,7 +94,8 @@ public:
     if (ctx.mod)
     {
       upse_eventloop_stop(ctx.mod);
-      upse_eventloop_render(ctx.mod, (int16_t**)&ctx.buf);
+      if (!m_endWasReached)
+        upse_eventloop_render(ctx.mod, (int16_t**)&ctx.buf);
       upse_module_close(ctx.mod);
     }
   }
@@ -108,7 +109,10 @@ public:
     upse_module_init();
     upse_module_t* upse = upse_module_open(filename.c_str(), &upse_io);
     if (!upse)
+    {
+      m_endWasReached = true;
       return false;
+    }
 
     ctx.mod = upse;
     ctx.size = 0;
@@ -134,6 +138,13 @@ public:
     {
       ctx.size = 4*upse_eventloop_render(ctx.mod, (int16_t**)&ctx.buf);
       ctx.head = ctx.buf;
+
+      // If return against 0, the end of stream is reached
+      if (ctx.size == 0)
+      {
+        m_endWasReached = true;
+        return 1;
+      }
     }
 #undef min
     actualsize = std::min(ctx.size, size);
@@ -167,6 +178,7 @@ public:
 
 private:
   UPSEContext ctx;
+  bool m_endWasReached = false;
 };
 
 
