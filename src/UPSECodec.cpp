@@ -76,9 +76,9 @@ const upse_iofuncs_t upse_io =
 struct UPSEContext
 {
   upse_module_t* mod = nullptr;
-  int16_t* buf;
-  int16_t* head;
-  int size;
+  int16_t* buf = nullptr;
+  int16_t* head = nullptr;
+  int size = 0;
 };
 
 }
@@ -100,11 +100,11 @@ public:
     }
   }
 
-  virtual bool Init(const std::string& filename, unsigned int filecache,
-                    int& channels, int& samplerate,
-                    int& bitspersample, int64_t& totaltime,
-                    int& bitrate, AEDataFormat& format,
-                    std::vector<AEChannel>& channellist) override
+  bool Init(const std::string& filename, unsigned int filecache,
+            int& channels, int& samplerate,
+            int& bitspersample, int64_t& totaltime,
+            int& bitrate, AEDataFormat& format,
+            std::vector<AEChannel>& channellist) override
   {
     upse_module_init();
     upse_module_t* upse = upse_module_open(filename.c_str(), &upse_io);
@@ -132,7 +132,7 @@ public:
     return true;
   }
 
-  virtual int ReadPCM(uint8_t* buffer, int size, int& actualsize) override
+  int ReadPCM(uint8_t* buffer, int size, int& actualsize) override
   {
     if (ctx.size == 0)
     {
@@ -154,14 +154,14 @@ public:
     return 0;
   }
 
-  virtual int64_t Seek(int64_t time) override
+  int64_t Seek(int64_t time) override
   {
     upse_eventloop_seek(ctx.mod, time);
     return time;
   }
 
-  virtual bool ReadTag(const std::string& file, std::string& title,
-                       std::string& artist, int& length) override
+  bool ReadTag(const std::string& file, std::string& title,
+               std::string& artist, int& length) override
   {
     upse_psf_t* tag = upse_get_psf_metadata(file.c_str(), &upse_io);
     if (tag)
@@ -185,15 +185,13 @@ private:
 class ATTRIBUTE_HIDDEN CMyAddon : public kodi::addon::CAddonBase
 {
 public:
-  CMyAddon() { }
+  CMyAddon() = default;
   virtual ADDON_STATUS CreateInstance(int instanceType, std::string instanceID, KODI_HANDLE instance, KODI_HANDLE& addonInstance) override
   {
     addonInstance = new CUPSECodec(instance);
     return ADDON_STATUS_OK;
   }
-  virtual ~CMyAddon()
-  {
-  }
+  virtual ~CMyAddon() = default;
 };
 
 
