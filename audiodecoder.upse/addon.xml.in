@@ -12,8 +12,8 @@
     tags="true"
     library_@PLATFORM@="@LIBRARY_FILENAME@"/>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">PSF Audio Decoder</summary>
-    <description lang="en">PSF Audio Decoder</description>
+    <summary lang="en">Portable Sound Format (PSF) Audio Decoder</summary>
+    <description lang="en">Adds decoding support for Sony Playstation Sound Format files (.PSF/.MINIPSF).</description>
     <platform>@PLATFORM@</platform>
   </extension>
 </addon>
