@@ -15,7 +15,7 @@
     <summary lang="en">Portable Sound Format (PSF) Audio Decoder</summary>
     <description lang="en">Adds decoding support for Sony Playstation Sound Format files (.PSF/.MINIPSF).</description>
     <platform>@PLATFORM@</platform>
-    <license>GPL-2.0</license>
+    <license>GPL-2.0-or-later</license>
     <source>https://github.com/xbmc/audiodecoder.upse</source>
     <assets>
       <icon>icon.png</icon>
