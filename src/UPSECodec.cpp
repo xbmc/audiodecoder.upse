@@ -75,8 +75,8 @@ struct UPSEContext
 class ATTRIBUTE_HIDDEN CUPSECodec : public kodi::addon::CInstanceAudioDecoder
 {
 public:
-  CUPSECodec(KODI_HANDLE instance) :
-    CInstanceAudioDecoder(instance) {}
+  CUPSECodec(KODI_HANDLE instance, const std::string& version) :
+    CInstanceAudioDecoder(instance, version) {}
 
   virtual ~CUPSECodec()
   {
@@ -175,9 +175,9 @@ class ATTRIBUTE_HIDDEN CMyAddon : public kodi::addon::CAddonBase
 {
 public:
   CMyAddon() = default;
-  virtual ADDON_STATUS CreateInstance(int instanceType, std::string instanceID, KODI_HANDLE instance, KODI_HANDLE& addonInstance) override
+  virtual ADDON_STATUS CreateInstance(int instanceType, const std::string& instanceID, KODI_HANDLE instance, const std::string& version, KODI_HANDLE& addonInstance) override
   {
-    addonInstance = new CUPSECodec(instance);
+    addonInstance = new CUPSECodec(instance, version);
     return ADDON_STATUS_OK;
   }
   virtual ~CMyAddon() = default;
