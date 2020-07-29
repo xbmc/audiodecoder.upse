@@ -140,9 +140,23 @@ bool CUPSECodec::ReadTag(const std::string& filename, kodi::addon::AudioDecoderI
   upse_psf_t* upseTag = upse_get_psf_metadata(filename.c_str(), &upse_io);
   if (upseTag)
   {
-    tag.SetTitle(upseTag->title);
-    tag.SetArtist(upseTag->artist);
+    if (upseTag->title && strcmp(upseTag->title, "n/a") != 0 && strcmp(upseTag->title, "-") != 0)
+      tag.SetTitle(upseTag->title);
+    if (upseTag->artist && strcmp(upseTag->artist, "n/a") != 0 && strcmp(upseTag->artist, "-") != 0)
+      tag.SetArtist(upseTag->artist);
+    if (upseTag->game && strcmp(upseTag->game, "n/a") != 0 && strcmp(upseTag->game, "-") != 0)
+    {
+      tag.SetAlbum(upseTag->game);
+      if (tag.GetArtist().empty())
+        tag.SetArtist(upseTag->game);
+    }
+    if (upseTag->year && strcmp(upseTag->year, "n/a") != 0 && strcmp(upseTag->year, "-") != 0)
+      tag.SetReleaseDate(upseTag->year);
+    if (upseTag->comment && strcmp(upseTag->comment, "n/a") != 0 && strcmp(upseTag->comment, "-") != 0)
+      tag.SetComment(upseTag->comment);
     tag.SetDuration(upseTag->length / 1000);
+    tag.SetSamplerate(44100);
+    tag.SetChannels(2);
     delete upseTag;
     return true;
   }
