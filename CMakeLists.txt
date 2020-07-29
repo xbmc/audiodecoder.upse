@@ -12,6 +12,7 @@ include_directories(${KODI_INCLUDE_DIR}/..
 add_subdirectory(lib/libupse)
 
 set(UPSE_SOURCES src/UPSECodec.cpp)
+set(UPSE_HEADERS src/UPSECodec.h)
 
 if(UNIX AND NOT APPLE)
   set(DEPLIBS -Wl,--whole-archive upse -Wl,--no-whole-archive ${ZLIB_LIBRARIES})
