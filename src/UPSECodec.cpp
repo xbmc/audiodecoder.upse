@@ -92,8 +92,8 @@ public:
   bool Init(const std::string& filename, unsigned int filecache,
             int& channels, int& samplerate,
             int& bitspersample, int64_t& totaltime,
-            int& bitrate, AEDataFormat& format,
-            std::vector<AEChannel>& channellist) override
+            int& bitrate, AudioEngineDataFormat& format,
+            std::vector<AudioEngineChannel>& channellist) override
   {
     upse_module_init();
     upse_module_t* upse = upse_module_open(filename.c_str(), &upse_io);
@@ -111,8 +111,8 @@ public:
     upse_ps1_spu_setvolume( p_spu, 32 );
 
     totaltime = upse->metadata->length;
-    format = AE_FMT_S16NE;
-    channellist = { AE_CH_FL, AE_CH_FR };
+    format = AUDIOENGINE_FMT_S16NE;
+    channellist = { AUDIOENGINE_CH_FL, AUDIOENGINE_CH_FR };
     channels = 2;
     bitspersample = 16;
     bitrate = 0.0;
@@ -149,16 +149,15 @@ public:
     return time;
   }
 
-  bool ReadTag(const std::string& file, std::string& title,
-               std::string& artist, int& length) override
+  bool ReadTag(const std::string& filename, kodi::addon::AudioDecoderInfoTag& tag) override
   {
-    upse_psf_t* tag = upse_get_psf_metadata(file.c_str(), &upse_io);
-    if (tag)
+    upse_psf_t* upseTag = upse_get_psf_metadata(filename.c_str(), &upse_io);
+    if (upseTag)
     {
-      title = tag->title;
-      artist = tag->artist;
-      length = tag->length/1000;
-      delete tag;
+      tag.SetTitle(upseTag->title);
+      tag.SetArtist(upseTag->artist);
+      tag.SetDuration(upseTag->length/1000);
+      delete upseTag;
       return true;
     }
 
