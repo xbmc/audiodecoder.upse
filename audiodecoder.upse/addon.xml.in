@@ -12,15 +12,15 @@
     tags="true"
     library_@PLATFORM@="@LIBRARY_FILENAME@"/>
   <extension point="xbmc.addon.metadata">
-    <summary lang="de_DE">Portable Sound Format (PSF) Audio Decoder</summary>
-    <summary lang="en_GB">Portable Sound Format (PSF) Audio Decoder</summary>
-    <description lang="de_DE">Fügt Dekodierungsunterstützung für Sony Playstation Sound Format-Dateien (.PSF/.MINIPSF) hinzu.</description>
-    <description lang="en_GB">Adds decoding support for Sony Playstation Sound Format files (.PSF/.MINIPSF).</description>
     <platform>@PLATFORM@</platform>
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/xbmc/audiodecoder.upse</source>
     <assets>
       <icon>icon.png</icon>
     </assets>
+    <summary lang="de_DE">Portable Sound Format (PSF) Audio Decoder</summary>
+    <summary lang="en_GB">Portable Sound Format (PSF) Audio Decoder</summary>
+    <description lang="de_DE">Fügt Dekodierungsunterstützung für Sony Playstation Sound Format-Dateien (.PSF/.MINIPSF) hinzu.</description>
+    <description lang="en_GB">Adds decoding support for Sony Playstation Sound Format files (.PSF/.MINIPSF).</description>
   </extension>
 </addon>
