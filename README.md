@@ -3,10 +3,10 @@
 This is a [Kodi](https://kodi.tv) audio decoder addon for PSF files.
 
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/License-GPL%20v2+-blue.svg)](LICENSE.md)
-[![Build and run tests](https://github.com/xbmc/audiodecoder.upse/actions/workflows/build.yml/badge.svg?branch=Matrix)](https://github.com/xbmc/audiodecoder.upse/actions/workflows/build.yml)
-[![Build Status](https://dev.azure.com/teamkodi/binary-addons/_apis/build/status/xbmc.audiodecoder.upse?branchName=Matrix)](https://dev.azure.com/teamkodi/binary-addons/_build/latest?definitionId=17&branchName=Matrix)
-[![Build Status](https://jenkins.kodi.tv/view/Addons/job/xbmc/job/audiodecoder.upse/job/Matrix/badge/icon)](https://jenkins.kodi.tv/blue/organizations/jenkins/xbmc%2Faudiodecoder.upse/branches/)
-<!--- [![Build Status](https://ci.appveyor.com/api/projects/status/github/xbmc/audiodecoder.upse?branch=Matrix&svg=true)](https://ci.appveyor.com/project/xbmc/audiodecoder-upse?branch=Matrix) -->
+[![Build and run tests](https://github.com/xbmc/audiodecoder.upse/actions/workflows/build.yml/badge.svg?branch=Nexus)](https://github.com/xbmc/audiodecoder.upse/actions/workflows/build.yml)
+[![Build Status](https://dev.azure.com/teamkodi/binary-addons/_apis/build/status/xbmc.audiodecoder.upse?branchName=Nexus)](https://dev.azure.com/teamkodi/binary-addons/_build/latest?definitionId=17&branchName=Nexus)
+[![Build Status](https://jenkins.kodi.tv/view/Addons/job/xbmc/job/audiodecoder.upse/job/Nexus/badge/icon)](https://jenkins.kodi.tv/blue/organizations/jenkins/xbmc%2Faudiodecoder.upse/branches/)
+<!--- [![Build Status](https://ci.appveyor.com/api/projects/status/github/xbmc/audiodecoder.upse?branch=Nexus&svg=true)](https://ci.appveyor.com/project/xbmc/audiodecoder-upse?branch=Nexus) -->
 
 ## Build instructions
 
