@@ -23,3 +23,15 @@ msgstr ""
 msgctxt "Addon Description"
 msgid "Adds decoding support for Sony Playstation Sound Format files (.PSF/.MINIPSF)."
 msgstr ""
+
+#. Supported file extension description about ".psf"
+#: audiodecoder.upse/addon.xml.in
+msgctxt "#30100"
+msgid "Portable Sound Format (PSF); designed to bring earlier gaming sound formats to next-generation consoles."
+msgstr ""
+
+#. Supported file extension description about ".minipsf"
+#: audiodecoder.upse/addon.xml.in
+msgctxt "#30101"
+msgid "Similar to a .PSF file; contains imported sequence data for songs from .PSFLIB files located in the same directory."
+msgstr ""

@@ -25,12 +25,12 @@ extern "C"
     upse_module_t* mod = nullptr;
     int16_t* buf = nullptr;
     int16_t* head = nullptr;
-    int size = 0;
+    size_t size = 0;
   };
 
 } /* extern "C" */
 
-class ATTRIBUTE_HIDDEN CUPSECodec : public kodi::addon::CInstanceAudioDecoder
+class ATTR_DLL_LOCAL CUPSECodec : public kodi::addon::CInstanceAudioDecoder
 {
 public:
   CUPSECodec(KODI_HANDLE instance, const std::string& version);
@@ -45,7 +45,7 @@ public:
             int& bitrate,
             AudioEngineDataFormat& format,
             std::vector<AudioEngineChannel>& channellist) override;
-  int ReadPCM(uint8_t* buffer, int size, int& actualsize) override;
+  int ReadPCM(uint8_t* buffer, size_t size, size_t& actualsize) override;
   int64_t Seek(int64_t time) override;
   bool ReadTag(const std::string& filename, kodi::addon::AudioDecoderInfoTag& tag) override;
 
