@@ -107,7 +107,7 @@ bool CUPSECodec::Init(const std::string& filename,
   return true;
 }
 
-int CUPSECodec::ReadPCM(uint8_t* buffer, int size, int& actualsize)
+int CUPSECodec::ReadPCM(uint8_t* buffer, size_t size, size_t& actualsize)
 {
   if (ctx.size == 0)
   {
@@ -118,7 +118,7 @@ int CUPSECodec::ReadPCM(uint8_t* buffer, int size, int& actualsize)
     if (ctx.size == 0)
     {
       m_endWasReached = true;
-      return 1;
+      return AUDIODECODER_READ_EOF;
     }
   }
 #undef min
@@ -126,7 +126,7 @@ int CUPSECodec::ReadPCM(uint8_t* buffer, int size, int& actualsize)
   memcpy(buffer, ctx.head, actualsize);
   ctx.head += actualsize / 2;
   ctx.size -= actualsize;
-  return 0;
+  return AUDIODECODER_READ_SUCCESS;
 }
 
 int64_t CUPSECodec::Seek(int64_t time)
@@ -166,7 +166,7 @@ bool CUPSECodec::ReadTag(const std::string& filename, kodi::addon::AudioDecoderI
 
 //------------------------------------------------------------------------------
 
-class ATTRIBUTE_HIDDEN CMyAddon : public kodi::addon::CAddonBase
+class ATTR_DLL_LOCAL CMyAddon : public kodi::addon::CAddonBase
 {
 public:
   CMyAddon() = default;
