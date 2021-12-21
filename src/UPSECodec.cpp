@@ -55,8 +55,7 @@ extern "C"
 
 //------------------------------------------------------------------------------
 
-CUPSECodec::CUPSECodec(KODI_HANDLE instance, const std::string& version)
-  : CInstanceAudioDecoder(instance, version)
+CUPSECodec::CUPSECodec(const kodi::addon::IInstanceInfo& instance) : CInstanceAudioDecoder(instance)
 {
 }
 
@@ -152,7 +151,8 @@ bool CUPSECodec::ReadTag(const std::string& filename, kodi::addon::AudioDecoderI
     }
     if (upseTag->year && strcmp(upseTag->year, "n/a") != 0 && strcmp(upseTag->year, "-") != 0)
       tag.SetReleaseDate(upseTag->year);
-    if (upseTag->comment && strcmp(upseTag->comment, "n/a") != 0 && strcmp(upseTag->comment, "-") != 0)
+    if (upseTag->comment && strcmp(upseTag->comment, "n/a") != 0 &&
+        strcmp(upseTag->comment, "-") != 0)
       tag.SetComment(upseTag->comment);
     tag.SetDuration(upseTag->length / 1000);
     tag.SetSamplerate(44100);
@@ -170,13 +170,10 @@ class ATTR_DLL_LOCAL CMyAddon : public kodi::addon::CAddonBase
 {
 public:
   CMyAddon() = default;
-  virtual ADDON_STATUS CreateInstance(int instanceType,
-                                      const std::string& instanceID,
-                                      KODI_HANDLE instance,
-                                      const std::string& version,
-                                      KODI_HANDLE& addonInstance) override
+  ADDON_STATUS CreateInstance(const kodi::addon::IInstanceInfo& instance,
+                              KODI_ADDON_INSTANCE_HDL& hdl) override
   {
-    addonInstance = new CUPSECodec(instance, version);
+    hdl = new CUPSECodec(instance);
     return ADDON_STATUS_OK;
   }
   virtual ~CMyAddon() = default;
