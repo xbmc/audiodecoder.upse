@@ -33,7 +33,7 @@ extern "C"
 class ATTR_DLL_LOCAL CUPSECodec : public kodi::addon::CInstanceAudioDecoder
 {
 public:
-  CUPSECodec(KODI_HANDLE instance, const std::string& version);
+  CUPSECodec(const kodi::addon::IInstanceInfo& instance);
   virtual ~CUPSECodec();
 
   bool Init(const std::string& filename,
