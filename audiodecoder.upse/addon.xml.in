@@ -29,6 +29,7 @@
     <description lang="de_DE">Fügt Dekodierungsunterstützung für Sony Playstation Sound Format-Dateien (.PSF/.MINIPSF) hinzu.</description>
     <description lang="en_GB">Adds decoding support for Sony Playstation Sound Format files (.PSF/.MINIPSF).</description>
     <description lang="es_ES">Añade soporte a la decodificación de lor achivos Sony Playstation Sound Format (.PSF/.MINIPSF).</description>
+    <description lang="fi_FI">Lisää Sony PlayStation Sound Format -tiedostojen dekoodaustuen (.PSF/.MINIPSF).</description>
     <description lang="ko_KR">소니 플레이스테이션 사운드 형식 파일(.PSF/.MINIPSF)에 대한 디코딩 지원을 추가합니다.</description>
     <description lang="ru_RU">Добавлена поддержка декодирования файлов Sony Playstation Sound Format (.PSF/.MINIPSF).</description>
     <description lang="zh_CN">添加对索尼 Playstation 声音格式文件（.PSF/.MINIPSF）的解码支持。</description>
