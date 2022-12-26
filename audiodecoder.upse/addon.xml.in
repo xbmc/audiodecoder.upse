@@ -23,6 +23,7 @@
     <summary lang="de_DE">Portable Sound Format (PSF) Audio Decoder</summary>
     <summary lang="en_GB">Portable Sound Format (PSF) Audio Decoder</summary>
     <summary lang="es_ES">Decodificador de Audio Portable Sound Format (PSF)</summary>
+    <summary lang="fr_FR">Décodeur audio au format audio portable (PSF)</summary>
     <summary lang="it_IT">Portable Sound Format (PSF) Audio Decoder</summary>
     <summary lang="ko_KR">포터블 사운드 포맷 (PSF) 오디오 디코더</summary>
     <summary lang="ru_RU">Аудиодекодер Portable Sound Format (PSF)</summary>
@@ -33,6 +34,7 @@
     <description lang="en_GB">Adds decoding support for Sony Playstation Sound Format files (.PSF/.MINIPSF).</description>
     <description lang="es_ES">Añade soporte a la decodificación de lor achivos Sony Playstation Sound Format (.PSF/.MINIPSF).</description>
     <description lang="fi_FI">Lisää Sony PlayStation Sound Format -tiedostojen dekoodaustuen (.PSF/.MINIPSF).</description>
+    <description lang="fr_FR">Ajoute la prise en charge du décodage des fichiers Sony Playstation Sound Format (.PSF/.MINIPSF).</description>
     <description lang="it_IT">Aggiunge il supporto per la decodifica per i file Sony Playstation Sound Format (.PSF/.MINIPSF).</description>
     <description lang="ko_KR">소니 플레이스테이션 사운드 형식 파일(.PSF/.MINIPSF)에 대한 디코딩 지원을 추가합니다.</description>
     <description lang="ru_RU">Добавлена поддержка декодирования файлов Sony Playstation Sound Format (.PSF/.MINIPSF).</description>
