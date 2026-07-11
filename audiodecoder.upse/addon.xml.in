@@ -29,6 +29,7 @@
     <summary lang="af_ZA">Portable Sound Format (PSF) Oudio Dekodeerder</summary>
     <summary lang="bs_BA">Audio dekoder prenosivog zvučnog formata (PSF)</summary>
     <summary lang="ca_ES">Descodificador d&apos;àudio Portable Sound Format (PSF)</summary>
+    <summary lang="cs_CZ">Dekodér zvuku ve formátu Portable Sound Format (PSF)</summary>
     <summary lang="da_DK">Portable Sound Format (PSF) lydafkoder</summary>
     <summary lang="de_DE">Portable Sound Format (PSF) Audio Decoder</summary>
     <summary lang="en_GB">Portable Sound Format (PSF) Audio Decoder</summary>
@@ -44,6 +45,7 @@
     <summary lang="zh_CN">便携式声音格式（PSF）音频解码器</summary>
     <description lang="bs_BA">Dodaje podršku za dekodiranje za datoteke Sony Playstation Sound Format (.PSF/.MINIPSF).</description>
     <description lang="ca_ES">Afegeix suport de descodificació per a fitxers Sony Playstation Sound Format (.PSF/.MINIPSF).</description>
+    <description lang="cs_CZ">Přidává podporu dekódování souborů Sony PlayStation Sound Format (.PSF/.MINIPSF).</description>
     <description lang="da_DK">Tilføjer afkodningsunderstøttelse til Sony Playstation Sound Format-filer (.PSF/.MINIPSF).</description>
     <description lang="de_DE">Fügt Dekodierungsunterstützung für Sony Playstation Sound Format-Dateien (.PSF/.MINIPSF) hinzu.</description>
     <description lang="en_GB">Adds decoding support for Sony Playstation Sound Format files (.PSF/.MINIPSF).</description>
